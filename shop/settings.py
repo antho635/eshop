@@ -77,6 +77,17 @@ WSGI_APPLICATION = 'shop.wsgi.application'
 
 DATABASES = {
     'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'bordely',
+        'USER': 'zymmwyykqjegma',
+        'PASSWORD': '0de50d8f809029258c5e9877bcf6f5287a0d1abc2d38b2f6faac98bf1939c29a',
+        'HOST': 'ec2-34-242-8-97.eu-west-1.compute.amazonaws.com',
+        'PORT': '5432',
+    }
+}
+
+DATABASES = {
+    'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
@@ -115,7 +126,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = BASE_DIR / 'static'
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+BASE_DIR = BASE_DIR / 'static'
 
 
 # Default primary key field type
