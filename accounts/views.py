@@ -41,7 +41,3 @@ def logout_user(request):
 
     return redirect('index')
 
-
-# profile_user
-def my_account(request):
-    return render(request, 'accounts/my_account.html')

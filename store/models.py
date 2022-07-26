@@ -1,6 +1,7 @@
 from django.conf.global_settings import AUTH_USER_MODEL
 from django.db import models
 from django.urls import reverse
+from shop.settings import AUTH_USER_MODEL
 
 
 # modele catehories
@@ -59,8 +60,6 @@ class Order(models.Model):
     quantity = models.IntegerField(default=1)
     ordered = models.BooleanField(default=False)
 
-    # ordered_date = models.IntegerField(blank=True, null=True)
-
     def __str__(self):
         return f"{self.product.name} of {self.quantity}"
 
@@ -78,15 +77,11 @@ class Cart(models.Model):
     user = models.OneToOneField(AUTH_USER_MODEL, on_delete=models.CASCADE)
     orders = models.ManyToManyField(Order)
     ordered = models.BooleanField(default=False)
-
-    # ordered_date = models.IntegerField(blank=True, null=True)
+    ordered_date = models.DateTimeField(blank=True, null=True)
 
     def __str__(self):
         return self.user.username
 
-    def delete_cart(self):
-        self.orders.all().delete()
-        self.delete()
 
     '''
     def delete(self, *args, **kwargs):
