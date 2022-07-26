@@ -1,4 +1,3 @@
-import cart as cart
 from django.conf.urls.static import static
 
 from django.contrib import admin
