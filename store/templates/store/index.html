@@ -10,7 +10,7 @@
                                              margin: auto;">
 
 
-                    <p>
+                    <p style="margin: auto; display: flex; justify-content: center">
                         <img style="max-width: 300px;" class="product_img" src="{{ product.image.url }}" alt="{{ product.name }}" >
                     </p>
 
@@ -18,9 +18,13 @@
                     <div class="item">
                         <div class="thumbnail">
                             <img class="group list-group-image" src="http://placehold.it/400x250/000/fff" alt="" />
-                            <div style="width: 200px;">
+                            <div class="row">
                                 <h4 class="group inner list-group-item-heading">{{ product.name }}</h4>
-                                <p class="group inner list-group-item-text">
+                                <p class="group inner list-group-item-text"
+                                    style="display:flex;
+                                    justify-content: center;
+                                    margin: auto;
+                                    text-align: justify;">
                                      {{ product.description }}.</p>
                                 <div class="row">
                                     <div class="">
