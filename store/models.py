@@ -1,19 +1,19 @@
+from django.conf.global_settings import AUTH_USER_MODEL
 from django.db import models
 from django.urls import reverse
-from shop.settings import AUTH_USER_MODEL
 
 
 # modele catehories
 class Category(models.Model):
-    name = models.CharField(max_length=200, db_index=True)
-    date_added = models.DateTimeField(auto_now=True)
+    name = models.CharField(max_length=255)
+    date_added = models.DateTimeField(auto_now_add=True)
 
-    # slug = models.SlugField(max_length=200, db_index=True)
+    def __str__(self):
+        return self.name
 
     class Meta:
+        verbose_name_plural = "Categories"
         ordering = ['-date_added']
-        verbose_name = 'category'
-        verbose_name_plural = 'categories'
 
 
 """
